@@ -102,6 +102,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log('WSN-Vertrieb EMAIL-only server on http://localhost:' + PORT);
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => {
+  console.log(`WSN-Vertrieb EMAIL-only server on :${port}`);
 });
